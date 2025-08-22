@@ -1,8 +1,8 @@
 # JunwonKim_김준원_金浚沅。
 > Hi! I'm a Korean student currently studying at **Qingdao Daewon International School**. I've cultivated a strong foundation in computer science and developed a passion for leadership rooted in devotion, commitment, and effective communication.
 
-- My primary areas of study are **computer algorithms**, **machine learning**, and **computer hardware**.
-- In my free time, I'm involved in **competitive programming**, **software development**, **photography**, and **playing guitar**. I believe in the power of collaboration, and I'm dedicated to empowering others and building initiatives that foster collective growth.
+- I'm currently focusing on **Machine Learning**, **Computer Vision**, **Image Processing** and **Cloud Computing**.
+- In my free time, I'm involved in **competitive programming**, **software development**, **photography**, **playing guitar**, and a bit of **work out**. I believe in the power of collaboration, and I'm dedicated to empowering others and building initiatives that foster collective growth.
 
 
 
