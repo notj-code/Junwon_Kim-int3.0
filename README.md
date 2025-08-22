@@ -1,79 +1,63 @@
-![thumbnail](https://user-images.githubusercontent.com/16558205/180779213-ea740975-3df1-460a-a964-0a623ee25872.png)
+# JunwonKim_김준원_金浚沅。
+> Hi! I'm a Korean student currently studying at **Qingdao Daewon International School**. I've cultivated a strong foundation in computer science and developed a passion for leadership rooted in devotion, commitment, and effective communication.
 
-### Live - https://react-portfolio-template.netlify.app
-### Demo Video - https://www.youtube.com/watch?v=62_HLbx2zLQ&t=9s
-### Open Source UI Components - https://ui.chetanverma.com/
-
-### Tutorials
-
-Youtube - https://www.youtube.com/watch?v=8cmJ2kR4SpM
-
-Blog - https://www.chetanverma.com/blog/how-to-build-a-portfolio-website-using-nextjs-and-tailwindcss
-
-### Features - 
-
-- Modern Stack (Next.js + TailwindCSS)
-- Minimal Design
-- Easy To Browse
-- Easy To Customize your details With GUI
-- Blog Crud (Create, Read, Update, Delete blog with easy to use UI).
-- Dark Mode
-
-
-### Sections
-
-- Header
-- Work
-- Services
-- About
-- Contact
-- Markdown Blog
-
-
-### How To Use
-
-- Clone this repo
-- run `yarn`
-- `yarn dev`
-
-
-### How To Deploy - 
-
-- There are many ways to Deploy this repo.
-- here we are gonna use netlify
-- Login into netlify with github
-- after login select the forked repo or the repo you want to deploy
-- after selecting netlify will automatially deploy your website.
-
-Quickes way to deploy this repo - 
-
-[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/chetanverma16/react-portfolio-template)
-
-
-### How To Contribute - 
-
-I would be very happy to review your PRs and all the awesome things that you can improve on this portfolio.
-
-
-### Tech Stack Used - 
-- Next.js
-- TailwindCSS
-
-
-### Thanks
-
-If you liked this portfolio template, don't forget to give it a ⭐.
-
-## Awesome Contributors
-[@Aryan3212](https://github.com/Aryan3212) [@achu-krishna](https://github.com/achu-krishna)
-
-## Supporting
-Many hours of hard work have gone into this project. Your support will be very appreciated!
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/chetanverma)
+- My primary areas of study are **computer algorithms**, **machine learning**, and **computer hardware**.
+- In my free time, I'm involved in **competitive programming**, **software development**, **photography**, and **playing guitar**. I believe in the power of collaboration, and I'm dedicated to empowering others and building initiatives that foster collective growth.
 
 
 
+## 1. Education & School Involvement
+
+- **Qingdao Daewon International School** (2025-2026)
+  1. Daewon GLP (Global Leadership Program)
+
+- **Harbin Wanbang School** (2021-2025)
+  1. Led the **Wanbang Computer Science Team** and the **Wanbang Competitive Programming Initiative (WBCPI)**.
+  2. Actively participated in the **School Swimming Team** as a **captain** and **School Band** as a **session electric guitarist**.
 
 
 
+## 2. Activities & Experiences
+
+- **Cloud Computing Engineer (CCE)** | @Verizon (2025 Spring)
+  1. Member of the Verizon Cloud Platform Department (CP), reporting to the VP.
+  2. Responsible for the delivery and design of internal cloud computing services (servers, storage, database, software, analytics, intelligence).
+
+- **Former Team Member (Content Author)** | @Competitive Programming Initiative (2024 Spring - 2025 Spring)
+  1. Contributed to the USACO Guide by writing content (modules, problem solutions).
+  2. Conducted code reviews for incoming Pull Requests.
+
+- **USACO (USA Computing Olympiad) Silver Award** (February 2025 Contest)
+
+- **Software Engineering Intern** | @Smooth (2024 Summer)
+  1. Developed code for handwritten character recognition using a convolutional neural network.
+  2. Explored Recurrent Neural Networks, Reinforcement Learning, and Generative Adversarial Networks.
+  3. Re-implemented handwritten character recognition on BitTensor and deployed a token to a Decentralized Exchange.
+
+- **Founder** | Wanbang Competitive Programming Initiative (2024 Spring)
+  1. Developed the **WBOJ (Wanbang Online Judge)** platform ([wboj.app](https://wboj.app)).
+  2. Organized and held competitive programming contests (WBDC) within the school.
+
+- **Leader** | School Computer Science Club (Rhythm) (2023 Spring - 2025 Spring)
+  1. Revised curriculum for Computer System, Circuit Theory, and Algorithm Problem Solving.
+  2. Developed a Q&A platform for team members ([wbrhythm.netlify.app](https://wbrhythm.netlify.app)).
+  3. Documented learning resources ([wbcslearning.netlify.app](https://wbcslearning.netlify.app)).
+
+- **Student Journalist** | @The Korea Herald (2020 Summer)
+
+
+<!-- 
+## 3. Technical Skills
+
+- **Frontend Development**: HTML/CSS/JS, Vue.js
+- **Backend Development**: SupaBase, PocketBase, MySQL, MongoDB, Django
+- **Languages**: C/C++, Java, Go, Python, Rust, Solidity
+ -->
+
+
+## 3. Contacts & Profiles
+
+<b>
+  <a href="mailto:junwonkim59@gmail.com" target="_blank"><img src="https://img.shields.io/badge/junwonkim59@gmail.com-EA4335?style=flat-square&logo=Gmail&logoColor=white"/></a>
+  <a href="mailto:junwonkim04@outlook.com" target="_blank"><img src="https://img.shields.io/badge/junwonkim04@outlook.com-0078D4?style=flat-square&logo=microsoftoutlook&logoColor=white"/></a>
+</b>
