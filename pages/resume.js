@@ -33,7 +33,7 @@ const Resume = () => {
       )}
       {data.showCursor && <Cursor />}
       <div
-        className={`container mx-auto mb-10 px-10 ${
+        className={`container mx-auto mb-10 px-20 ${
           data.showCursor && "cursor-none"
         }`}
       >
