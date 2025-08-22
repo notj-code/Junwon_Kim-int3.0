@@ -63,9 +63,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </div>
             </div>
             <Popover.Panel
-              className={`gradient-shadow absolute right-0 z-10 w-11/12 p-4 ${
-                theme === "dark" ? "bg-slate-800" : "bg-white"
-              } shadow-lg rounded-md`}
+              className={`absolute right-0 z-10 w-11/12 p-4 ${
+                theme === "dark" ? "bg-slate-800/50" : "bg-white/50"
+              } shadow-lg rounded-md backdrop-blur-lg`}
             >
               {!isBlog ? (
                 <div className="grid grid-cols-1">
@@ -119,9 +119,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
         )}
       </Popover>
       <div
-        className={`gradient-shadow mt-10 hidden flex-row items-center justify-between sticky ${
-          theme === "light" && "bg-white"
-        } dark:text-white top-0 z-10 tablet:flex shadow-lg p-4 rounded-md`}
+        className={`mt-10 hidden flex-row items-center justify-between sticky ${
+          theme === "light" ? "bg-white/50" : "dark:bg-slate-800/50"
+        } dark:text-white top-0 z-10 tablet:flex shadow-lg p-4 rounded-md backdrop-blur-lg`}
       >
         <h1
           onClick={() => router.push("/")}
