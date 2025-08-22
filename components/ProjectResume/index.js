@@ -1,7 +1,14 @@
 import React from "react";
 
 const ProjectResume = ({ dates, type, position, bullets }) => {
-  const [bulletsLocal, setBulletsLocal] = React.useState(bullets.split(","));
+  let bulletsLocal = [];
+  if (bullets) {
+    if (Array.isArray(bullets)) {
+      bulletsLocal = bullets;
+    } else {
+      bulletsLocal = bullets.split(",");
+    }
+  }
 
   return (
     <div className="mt-5 w-full flex mob:flex-col desktop:flex-row justify-between">

@@ -54,9 +54,8 @@ const Edit = () => {
   };
 
   const deleteProject = (id) => {
-    const copyProjects = data.projects;
-    copyProjects = copyProjects.filter((project) => project.id !== id);
-    setData({ ...data, projects: copyProjects });
+    const newProjects = data.projects.filter((project) => project.id !== id);
+    setData({ ...data, projects: newProjects });
   };
 
   // Services Handler
@@ -83,9 +82,8 @@ const Edit = () => {
   };
 
   const deleteService = (id) => {
-    const copyServices = data.services;
-    copyServices = copyServices.filter((service) => service.id !== id);
-    setData({ ...data, services: copyServices });
+    const newServices = data.services.filter((service) => service.id !== id);
+    setData({ ...data, services: newServices });
   };
 
   // Socials Handler
@@ -111,9 +109,8 @@ const Edit = () => {
   };
 
   const deleteSocials = (id) => {
-    const copySocials = data.socials;
-    copySocials = copySocials.filter((social) => social.id !== id);
-    setData({ ...data, socials: copySocials });
+    const newSocials = data.socials.filter((social) => social.id !== id);
+    setData({ ...data, socials: newSocials });
   };
 
   // Resume
@@ -137,8 +134,18 @@ const Edit = () => {
     });
   };
 
+  const handleDeleteExperience = (id) => {
+    const newExperiences = data.resume.experiences.filter(
+      (experience) => experience.id !== id
+    );
+    setData({
+      ...data,
+      resume: { ...data.resume, experiences: newExperiences },
+    });
+  };
+
   const handleEditExperiences = (index, editExperience) => {
-    let copyExperiences = data.resume.experiences;
+    let copyExperiences = [...data.resume.experiences];
     copyExperiences[index] = { ...editExperience };
     setData({
       ...data,
@@ -147,7 +154,11 @@ const Edit = () => {
   };
 
   return (
-    <div className={`container mx-auto ${data.showCursor && "cursor-none"}`}>
+    <div
+      className={`container mx-auto mb-10 mt-20 px-4 tablet:px-20 ${
+        data.showCursor && "cursor-none"
+      }`}
+    >
       <Header isBlog></Header>
       {data.showCursor && <Cursor />}
       <div className="mt-10">
@@ -587,7 +598,7 @@ const Edit = () => {
                   <div className="flex items-center justify-between">
                     <h1 className="text-2xl">{experiences.position}</h1>
                     <Button
-                      // onClick={() => deleteProject(project.id)}
+                      onClick={() => handleDeleteExperience(experiences.id)}
                       type="primary"
                     >
                       Delete
@@ -640,11 +651,15 @@ const Edit = () => {
                     <label className="w-1/5 text-lg opacity-50">Bullets</label>
                     <div className="w-4/5 ml-10 flex flex-col">
                       <input
-                        value={experiences.bullets}
+                        value={
+                          Array.isArray(experiences.bullets)
+                            ? experiences.bullets.join(", ")
+                            : experiences.bullets
+                        }
                         onChange={(e) =>
                           handleEditExperiences(index, {
                             ...experiences,
-                            bullets: e.target.value,
+                            bullets: e.target.value.split(","),
                           })
                         }
                         placeholder="Bullet One, Bullet Two, Bullet Three"
