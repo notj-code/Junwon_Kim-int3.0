@@ -6,7 +6,7 @@ import WorkCard from "../components/WorkCard";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
-import Head from "next/head";
+import Seo from "../components/Seo";
 import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
@@ -51,9 +51,7 @@ export default function Home() {
   return (
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
       {data.showCursor && <Cursor />}
-      <Head>
-        <title>{data.name}</title>
-      </Head>
+      <Seo title={data.name} description={data.headerTaglineOne} />
 
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>

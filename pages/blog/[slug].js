@@ -3,6 +3,7 @@ import { getPostBySlug, getAllPosts } from "../../utils/api";
 import Header from "../../components/Header";
 import ContentSection from "../../components/ContentSection";
 import Footer from "../../components/Footer";
+import Seo from "../../components/Seo";
 import Head from "next/head";
 import { useIsomorphicLayoutEffect } from "../../utils";
 import { stagger } from "../../animations";
@@ -22,11 +23,44 @@ const BlogPost = ({ post }) => {
     stagger([textOne.current, textTwo.current], { y: 30 }, { y: 0 });
   }, []);
 
+  const siteUrl = 'https://junwonkim-int.netlify.app/';
+
   return (
     <>
+      <Seo
+        title={`Blog - ${post.title}`}
+        description={post.preview}
+        ogImage={post.image}
+        ogUrl={`${siteUrl}/blog/${post.slug}`}
+      />
       <Head>
-        <title>{"Blog - " + post.title}</title>
-        <meta name="description" content={post.preview} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "${post.title}",
+            "image": ["${post.image}"],
+            "datePublished": "${post.date}",
+            "author": {
+              "@type": "Person",
+              "name": "${data.name}"
+            },
+             "publisher": {
+              "@type": "Organization",
+              "name": "${data.name}",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "${siteUrl}/images/logo.svg"
+              }
+            },
+            "description": "${post.preview}"
+          }
+        `,
+          }}
+        />
       </Head>
       {data.showCursor && <Cursor />}
 
