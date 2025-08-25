@@ -52,6 +52,8 @@ const Seo = ({
       <meta name="twitter:title" content={seo.twitterTitle} />
       <meta name="twitter:description" content={seo.twitterDescription} />
       <meta name="twitter:image" content={seo.twitterImage} />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4942977426656768"
+     crossorigin="anonymous"></script>
     </Head>
   );
 };
