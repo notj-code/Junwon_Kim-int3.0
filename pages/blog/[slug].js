@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import Image from "next/image";
+
 import { getPostBySlug, getAllPosts } from "../../utils/api";
 import Header from "../../components/Header";
 import ContentSection from "../../components/ContentSection";
@@ -72,13 +72,10 @@ const BlogPost = ({ post }) => {
       >
         <Header isBlog={true} />
         <div className="mt-10 flex flex-col">
-          <Image
+          <img
             className="w-full h-96 rounded-lg shadow-lg object-cover"
             src={post.image}
             alt={post.title}
-            width={700}
-            height={400}
-            layout="responsive"
           />
           <h1
             ref={textOne}
