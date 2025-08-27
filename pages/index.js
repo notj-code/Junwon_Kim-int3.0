@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -10,6 +10,7 @@ import Seo from "../components/Seo";
 import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
+import markdownToHtml from "../utils/markdownToHtml";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -22,6 +23,16 @@ export default function Home() {
   const textTwo = useRef();
   const textThree = useRef();
   const textFour = useRef();
+
+  const [aboutContent, setAboutContent] = useState("");
+
+  useEffect(() => {
+    async function getAboutContent() {
+      const content = await markdownToHtml(data.aboutpara || "");
+      setAboutContent(content);
+    }
+    getAboutContent();
+  }, []);
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -129,9 +140,10 @@ export default function Home() {
         )}
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-2/5 mx-auto">
-            {data.aboutpara}
-          </p>
+          <div
+            className="about-section tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-4/5"
+            dangerouslySetInnerHTML={{ __html: aboutContent }}
+          ></div>
         </div>
         <Footer />
       </div>
