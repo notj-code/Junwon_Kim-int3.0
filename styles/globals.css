@@ -76,3 +76,19 @@ body {
   background: inherit;
   border-radius: inherit;
 }
+
+.about-section p {
+  margin-top: 1rem;
+}
+
+.about-section strong {
+  font-weight: 510;
+}
+
+.resume-description p {
+  margin-top: 1rem;
+}
+
+.resume-description strong {
+  font-weight: 510;
+}

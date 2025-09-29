@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const WorkCard = ({ img, name, description, onClick }) => {
   return (
     <div
@@ -14,7 +15,7 @@ const WorkCard = ({ img, name, description, onClick }) => {
           alt={name}
           className="h-full w-full object-cover hover:scale-110 transition-all ease-out duration-300"
           src={img}
-        ></img>
+        />
       </div>
       <h1 className="mt-5 text-3xl font-medium">
         {name ? name : "Project Name"}

@@ -1,4 +1,5 @@
 import { Popover } from "@headlessui/react";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -37,18 +38,20 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       setTheme(theme === "dark" ? "light" : "dark")
                     }
                   >
-                    <img
-                      className="h-6"
+                    <Image
+                      alt={theme === "dark" ? "moon" : "sun"}
                       src={`/images/${
                         theme === "dark" ? "moon.svg" : "sun.svg"
                       }`}
-                    ></img>
+                      width={24}
+                      height={24}
+                    />
                   </Button>
                 )}
 
                 <Popover.Button>
-                  <img
-                    className="h-5"
+                  <Image
+                    alt="menu"
                     src={`/images/${
                       !open
                         ? theme === "dark"
@@ -58,7 +61,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                         ? "cancel.svg"
                         : "cancel-white.svg"
                     }`}
-                  ></img>
+                    width={20}
+                    height={20}
+                  />
                 </Popover.Button>
               </div>
             </div>
@@ -75,17 +80,13 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
                   )}
                   {showResume && (
-                    <Button
-                      onClick={() =>
-                        window.open("mailto:hello@chetanverma.com")
-                      }
-                    >
+                    <Button onClick={() => router.push("/resume")}>
                       Resume
                     </Button>
                   )}
 
                   <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
+                    onClick={() => window.open("mailto:junwonkim59@gmail.com")}
                   >
                     Contact
                   </Button>
@@ -108,7 +109,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   )}
 
                   <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
+                    onClick={() => window.open("mailto:junwonkim59@gmail.com")}
                   >
                     Contact
                   </Button>
@@ -145,17 +146,19 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            <Button onClick={() => window.open("mailto:junwonkim59@gmail.com")}>
               Contact
             </Button>
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                <img
-                  className="h-6"
+                <Image
+                  alt={theme === "dark" ? "moon" : "sun"}
                   src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
+                  width={24}
+                  height={24}
+                />
               </Button>
             )}
           </div>
@@ -174,7 +177,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            <Button onClick={() => window.open("mailto:junwonkim59@gmail.com")}>
               Contact
             </Button>
 
@@ -182,10 +185,12 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               <Button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                <img
-                  className="h-6"
+                <Image
+                  alt={theme === "dark" ? "moon" : "sun"}
                   src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
+                  width={24}
+                  height={24}
+                />
               </Button>
             )}
           </div>

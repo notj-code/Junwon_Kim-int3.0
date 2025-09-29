@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -6,10 +6,11 @@ import WorkCard from "../components/WorkCard";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
-import Head from "next/head";
+import Seo from "../components/Seo";
 import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
+import markdownToHtml from "../utils/markdownToHtml";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -22,6 +23,16 @@ export default function Home() {
   const textTwo = useRef();
   const textThree = useRef();
   const textFour = useRef();
+
+  const [aboutContent, setAboutContent] = useState("");
+
+  useEffect(() => {
+    async function getAboutContent() {
+      const content = await markdownToHtml(data.aboutpara || "");
+      setAboutContent(content);
+    }
+    getAboutContent();
+  }, []);
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -51,9 +62,7 @@ export default function Home() {
   return (
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
       {data.showCursor && <Cursor />}
-      <Head>
-        <title>{data.name}</title>
-      </Head>
+      <Seo title={data.name} description={data.headerTaglineOne} />
 
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
@@ -110,7 +119,7 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
+          <h1 className="tablet:m-10 text-2xl text-bold">Projects.</h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -131,9 +140,10 @@ export default function Home() {
         )}
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
+          <div
+            className="about-section tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-4/5"
+            dangerouslySetInnerHTML={{ __html: aboutContent }}
+          ></div>
         </div>
         <Footer />
       </div>

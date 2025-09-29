@@ -9,8 +9,7 @@
 ## 1. Education & School Involvement
 
 - **Qingdao Daewon International School** (2025-2026)
-  1. Daewon GLP (Global Leadership Program)
-
+  1. Daewon GLP (Global Leadership Program) 
 - **Harbin Wanbang School** (2021-2025)
   1. Led the **Wanbang Computer Science Team** and the **Wanbang Competitive Programming Initiative (WBCPI)**.
   2. Actively participated in the **School Swimming Team** as a **captain** and **School Band** as a **session electric guitarist**.

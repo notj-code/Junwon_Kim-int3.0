@@ -6,6 +6,7 @@ import ProjectResume from "../components/ProjectResume";
 import Socials from "../components/Socials";
 import Button from "../components/Button";
 import { useTheme } from "next-themes";
+import markdownToHtml from "../utils/markdownToHtml";
 // Data
 import { name, showResume } from "../data/portfolio.json";
 import { resume } from "../data/portfolio.json";
@@ -15,13 +16,23 @@ const Resume = () => {
   const router = useRouter();
   const theme = useTheme();
   const [mount, setMount] = useState(false);
+  const [resumeDescription, setResumeDescription] = useState("");
 
   useEffect(() => {
     setMount(true);
     if (!showResume) {
       router.push("/");
     }
-  }, []);
+  }, [router, showResume]);
+
+  useEffect(() => {
+    async function getResumeDescription() {
+      const content = await markdownToHtml(resume.description || "");
+      setResumeDescription(content);
+    }
+    getResumeDescription();
+  }, [resume.description]);
+
   return (
     <>
       {process.env.NODE_ENV === "development" && (
@@ -47,9 +58,10 @@ const Resume = () => {
             >
               <h1 className="text-3xl font-bold">{name}</h1>
               <h2 className="text-xl mt-5">{resume.tagline}</h2>
-              <h2 className="w-4/5 text-xl mt-5 opacity-50">
-                {resume.description}
-              </h2>
+              <div
+                className="w-4/5 text-xl mt-10 opacity-50 resume-description"
+                dangerouslySetInnerHTML={{ __html: resumeDescription }}
+              ></div>
               <div className="mt-2">
                 <Socials />
               </div>
